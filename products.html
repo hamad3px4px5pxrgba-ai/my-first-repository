@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>VELO Catalog — Select an Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .catalog-page {
+        min-height: 100vh;
+        padding: 120px 6vw 80px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .catalog-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+      .product-card {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--card-color, var(--ac));
+        box-shadow:
+          0 20px 45px rgba(0, 0, 0, 0.5),
+          0 0 25px var(--card-glow, rgba(255, 90, 44, 0.2));
+      }
+      .product-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--card-color, var(--ac2));
+        margin-bottom: 8px;
+      }
+      .product-title {
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .product-desc {
+        color: var(--mut);
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .product-preview {
+        height: 180px;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(
+          circle,
+          var(--card-glow, rgba(255, 255, 255, 0.05)),
+          transparent 70%
+        );
+        border-radius: var(--radius-md);
+        margin-bottom: 20px;
+      }
+      .product-preview img {
+        max-height: 80%;
+        max-width: 80%;
+        object-fit: contain;
+        transform: rotate(-10deg);
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+      }
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 15px;
+      }
+      .card-actions a {
+        text-align: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="glass">
+      <b>VELO</b>
+      <a class="h" href="index.html">Home</a>
+      <a class="h" href="index.html?scroll=product">Product</a>
+      <a class="h" href="index.html?scroll=features">Features</a>
+      <a class="h" href="index.html#about">About</a>
+      <a class="h" href="index.html#blog">Blog</a>
+      <a class="buy" href="index.html" style="margin-left: 10px"
+        >Back to 3D Experience</a
+      >
+    </nav>
+
+    <div class="catalog-page">
+      <div class="catalog-header">
+        <div class="lab">Full Catalog</div>
+        <h1>Choose Your Apex 01</h1>
+        <p class="s" style="max-width: 600px; margin: 16px auto 0">
+          Select any edition below to automatically load its custom theme, 3D
+          animations, specs, and Amazon Buy Now link on the homepage.
+        </p>
+      </div>
+
+      <div class="catalog-grid" id="catalogList">
+        <!-- Rendered dynamically by script from product-data.js -->
+      </div>
+    </div>
+
+    <script src="product-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const list = document.getElementById("catalogList");
+      if (typeof VELO_PRODUCTS !== "undefined") {
+        VELO_PRODUCTS.forEach((prod) => {
+          const card = document.createElement("div");
+          card.className = "product-card glass";
+          card.style.setProperty("--card-color", prod.colors.primary);
+          card.style.setProperty(
+            "--card-glow",
+            prod.colors.glow || "rgba(255, 255, 255, 0.1)",
+          );
+
+          card.innerHTML = `
+            <div>
+              <div class="product-badge">${prod.badge || "Apex 01 Edition"}</div>
+              <div class="product-title">${prod.edition}</div>
+              <p class="product-desc">${prod.heroSubtitle || prod.tagline}</p>
+              <div class="product-preview">
+                <img src="${prod.image}" alt="${prod.edition}" onerror="this.src='IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png'" />
+              </div>
+              <div class="price" style="font-size: 28px; margin-bottom: 8px;">${prod.price}</div>
+              <div style="font-size: 13px; color: var(--mut); margin-bottom: 12px;">
+                ${prod.specs.weight}g · ${prod.specs.energyReturn}% Energy Return · ${prod.specs.stackHeight}mm Stack
+              </div>
+            </div>
+            <div class="card-actions">
+              <a href="index.html?product=${prod.slug || prod.id}" class="btn" style="background: linear-gradient(135deg, ${prod.colors.primary}, ${prod.colors.secondary});">
+                View in 3D Story →
+              </a>
+              <a href="${prod.amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-sec">
+                Buy on Amazon ↗
+              </a>
+            </div>
+          `;
+          list.appendChild(card);
+        });
+      }
+    </script>
+  </body>
+</html>

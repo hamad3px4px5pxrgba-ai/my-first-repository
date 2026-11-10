@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>VELO Apex 01 — Run beyond the ground</title>
+    <meta
+      name="description"
+      content="VELO Apex 01 — A carbon-plated elite racing trainer with supercritical CloudCell foam and high-energy rebound."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="top">
+    <!-- Top Scroll Progress Indicator -->
+    <div id="bar"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="glass">
+      <b>VELO</b>
+      <a class="h" data-p="0">Home</a>
+      <a class="h" data-p=".22">Product</a>
+      <a class="h" data-p=".42">Features</a>
+      <a class="h" href="#about">About</a>
+      <a class="h" href="#blog">Blog</a>
+      <a
+        class="buy"
+        id="navBuyBtn"
+        data-p=".95"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Buy Apex 01 on Amazon"
+      >
+        Buy now <span class="arr">↗</span>
+      </a>
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="menu" class="glass" role="menu" aria-hidden="true">
+      <a data-p="0" role="menuitem"><em>01</em>Home</a>
+      <a data-p=".22" role="menuitem"><em>02</em>Product</a>
+      <a data-p=".42" role="menuitem"><em>03</em>Features</a>
+      <a href="#about" role="menuitem"><em>04</em>About</a>
+      <a href="#blog" role="menuitem"><em>05</em>Blog</a>
+      <a
+        id="menuBuyBtn"
+        class="menu-buy-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        role="menuitem"
+      >
+        Order on Amazon ↗
+      </a>
+    </div>
+
+    <!-- Sticky Active Slide Counter -->
+    <div id="count" class="count">01 / 06</div>
+
+    <!-- 3D Scroll Journey Stage -->
+    <main id="story">
+      <div class="stage">
+        <!-- Ambient Glowing Aura Blobs -->
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+
+        <!-- Dynamic Ghost Background Typography -->
+        <div class="ghost" id="ghostTitle">APEX</div>
+
+        <!-- 3D Orbital Rings & Floating Dots -->
+        <div class="ring"></div>
+        <div class="ring r2"></div>
+        <div id="dots"></div>
+
+        <!-- Dynamic Ground Contact Shadow -->
+        <div class="shadow"></div>
+
+        <!-- 3D Animated Shoe Presentation -->
+        <div class="shoe-wrap">
+          <div class="halo"></div>
+          <div class="shoe-in">
+            <img
+              data-i="0"
+              id="hero-shoe"
+              src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+              alt="VELO Apex 01 running shoe"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 0: Hero -->
+        <section class="slide L hero" data-in="-1" data-out=".14">
+          <div class="box">
+            <div class="lab" data-r id="heroBadge">New · Apex 01 · Running</div>
+            <h1 class="split" data-r id="heroTitle">Run beyond the ground.</h1>
+            <p class="s" data-r id="heroSubtitle">
+              A carbon-plated trainer with a cloud-soft landing and a response
+              that feels like the road is pushing back.
+            </p>
+            <div class="hero-actions" data-r>
+              <a class="btn" data-p=".22">Discover Apex →</a>
+              <a
+                class="btn-sec"
+                id="heroAmazonBtn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buy on Amazon ↗
+              </a>
+            </div>
+            <div class="hint" data-r>
+              <span class="hint-mouse"><span class="wheel"></span></span>
+              SCROLL TO EXPLORE
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 1: The Shoe -->
+        <section class="slide R" data-in=".14" data-out=".32">
+          <div class="box">
+            <div class="lab" data-r>01 — The shoe</div>
+            <h2 class="split" data-r id="shoeIntro">
+              Engineered like a machine. Felt like air.
+            </h2>
+            <p class="s" data-r id="shoeDesc">
+              Apex 01 balances 238 grams of featherweight structure with a 38 mm
+              stack of responsive foam, so every stride returns more than you
+              give.
+            </p>
+            <div class="price-row" data-r>
+              <div class="price" id="shoePrice">$229</div>
+              <a
+                class="btn-sm"
+                id="shoeBuyBtn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Order on Amazon ↗
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2: Features -->
+        <section class="slide L" data-in=".32" data-out=".53" data-step=".025">
+          <div class="box">
+            <div class="lab" data-r>02 — Features</div>
+            <h2 class="split" data-r>Four ideas, one stride.</h2>
+            <div class="feat" id="featGrid">
+              <div class="glass" data-r>
+                <em>01</em>
+                <p>
+                  <strong id="feat1Title">AeroKnit 2.0 upper</strong>
+                  <span id="feat1Desc"
+                    >Seamless, breathable, zoned for high-speed stretch.</span
+                  >
+                </p>
+              </div>
+              <div class="glass" data-r>
+                <em>02</em>
+                <p>
+                  <strong id="feat2Title">FlexPlate carbon</strong>
+                  <span id="feat2Desc"
+                    >Curved spoon plate that springs you forward.</span
+                  >
+                </p>
+              </div>
+              <div class="glass" data-r>
+                <em>03</em>
+                <p>
+                  <strong id="feat3Title">CloudCell foam</strong>
+                  <span id="feat3Desc"
+                    >Soft on landing, lively on toe-off.</span
+                  >
+                </p>
+              </div>
+              <div class="glass" data-r>
+                <em>04</em>
+                <p>
+                  <strong id="feat4Title">GripWeave outsole</strong>
+                  <span id="feat4Desc"
+                    >Wet-road traction, zero excess weight.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: Detail -->
+        <section
+          class="slide R det"
+          data-in=".53"
+          data-out=".69"
+          data-step=".02"
+        >
+          <div class="box glass">
+            <div class="lab" data-r>03 — Detail</div>
+            <h2 class="split" data-r>Every millimetre, measured.</h2>
+            <p class="s" data-r id="detailLead">
+              The toe box is a 3D-woven mesh just 0.8 mm thick, mapped to the
+              way your foot flexes at speed.
+            </p>
+            <p class="s" data-r id="detailMetrics">
+              Toe spring 14° · Heel bevel 9° · Midfoot rocker engineered for a
+              smooth roll.
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 4: Performance Stats -->
+        <section class="slide P" data-in=".69" data-out=".86" data-step=".025">
+          <div class="box">
+            <div class="lab" data-r>04 — Performance</div>
+            <h2 class="split" data-r>Built to move fast.</h2>
+            <div class="stats">
+              <div class="stat glass" data-r>
+                <b><span data-n="238" id="statWeight">238</span><u>g</u></b>
+                <small>Weight</small>
+              </div>
+              <div class="stat glass" data-r>
+                <b><span data-n="82" id="statReturn">82</span><u>%</u></b>
+                <small>Energy return</small>
+              </div>
+              <div class="stat glass" data-r>
+                <b><span data-n="38" id="statStack">38</span><u>mm</u></b>
+                <small>Stack height</small>
+              </div>
+              <div class="stat glass" data-r>
+                <b><span data-n="6" id="statDrop">6</span><u>mm</u></b>
+                <small>Drop</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5: Choose Colour & Buy Now -->
+        <section class="slide C" data-in=".86" data-out="9.0" data-step=".02">
+          <div class="box" style="max-width: 660px">
+            <div class="lab" data-r id="swBadge">05 — Choose your edition</div>
+            <div class="price" data-r id="swPrice">Apex 01 — $229</div>
+            <div class="sw" data-r id="sw"></div>
+            <div class="sw-actions" data-r>
+              <a
+                class="btn"
+                id="swBuyBtn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buy on Amazon — $229 ↗
+              </a>
+              <a class="btn-sec" href="#about">Learn VELO Story ↓</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- About VELO Section -->
+    <section class="sec about" id="about">
+      <div class="lab" data-v>About VELO</div>
+      <p class="scrub" id="scrub">
+        We build shoes the way studios build films, frame by frame, obsessing
+        over every transition between one stride and the next. Apex 01 began as
+        a single question: what if a runner never felt the ground push back?
+      </p>
+      <div class="agrid">
+        <div class="pimg" data-par=".08">
+          <img
+            data-i="0"
+            src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+            alt="VELO Apex front profile"
+          />
+        </div>
+        <div class="pimg" data-par="-.06">
+          <img
+            data-i="1"
+            src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+            alt="VELO Apex lateral profile"
+          />
+        </div>
+        <div class="info glass" data-v data-par=".04">
+          <b>40,000</b>
+          <p>
+            Test strides logged across lab and city streets before a single
+            design was approved.
+          </p>
+          <b>3 yrs</b>
+          <p>
+            Of material research behind CloudCell, from first foam sample to
+            final tune.
+          </p>
+          <b>238 g</b>
+          <p>The lightest Apex ever, without giving up cushioning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal / Stories From The Lab -->
+    <section class="sec" id="blog">
+      <div class="bhead" data-v>
+        <div>
+          <div class="lab">Journal</div>
+          <h2>Stories from the lab.</h2>
+        </div>
+      </div>
+      <div class="bgrid">
+        <div data-v>
+          <article class="card glass">
+            <div
+              class="cimg"
+              style="--a: #ff5a2c; --l: -10%; --t: 22%; --r: -12deg"
+            >
+              <img
+                data-i="0"
+                src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+                alt="CloudCell foam research"
+              />
+            </div>
+            <div class="cbody">
+              <span class="pill">Engineering</span>
+              <h3>Inside the lab: tuning CloudCell across 40,000 strides</h3>
+              <p>
+                How a foam recipe went from beaker to road in 11 iterations.
+              </p>
+              <a href="#blog">Read more →</a>
+            </div>
+          </article>
+        </div>
+        <div data-v>
+          <article class="card glass">
+            <div
+              class="cimg"
+              style="--a: #2a8cff; --l: -30%; --t: 10%; --r: 10deg"
+            >
+              <img
+                data-i="1"
+                src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+                alt="Carbon plate dynamics"
+              />
+            </div>
+            <div class="cbody">
+              <span class="pill">Performance</span>
+              <h3>Why carbon plates feel different on city streets</h3>
+              <p>
+                Rocker geometry, cadence and the science of a smoother roll.
+              </p>
+              <a href="#blog">Read more →</a>
+            </div>
+          </article>
+        </div>
+        <div data-v>
+          <article class="card glass">
+            <div
+              class="cimg"
+              style="--a: #9be620; --l: -5%; --t: 30%; --r: -20deg"
+            >
+              <img
+                data-i="2"
+                src="IMGS/pngtree-red-and-black-sports-shoes-png-image_16082181.png"
+                alt="Color design story"
+              />
+            </div>
+            <div class="cbody">
+              <span class="pill">Design</span>
+              <h3>Ember, Glacier, Volt: the story of four colourways</h3>
+              <p>Choosing a palette that looks fast while standing still.</p>
+              <a href="#blog">Read more →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Panel -->
+    <section class="sec" id="cta" style="padding-top: 4vh">
+      <div class="panel glass" data-v>
+        <div class="lab">Apex 01 · Available now</div>
+        <h2>Step into the future.</h2>
+        <p class="s" style="max-width: 540px; margin: 20px auto 0">
+          Free shipping, 60-day trial and returns. Your first run is on us.
+        </p>
+        <a class="btn" id="mag" target="_blank" rel="noopener noreferrer">
+          Order Apex 01 — $229 ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <!-- <span class="brand-copy">VELO APEX 01 — RUN BEYOND</span> -->
+      <p class="sub-copy">
+        © 2026 VELO Created by Hamad Ahmad | All Rights Reserved
+      </p>
+      <!-- <label>
+        Swap in your own shoe PNG
+        <input id="up" type="file" accept="image/png" hidden />
+      </label> -->
+    </footer>
+
+    <!-- Scripts: Product Data Catalog first, then Interactive Engine -->
+    <script src="product.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
